@@ -1,0 +1,22 @@
+convertFloatOrDouble Function:
+1. Conditional branching for bit-size(32 bit or 64 bit) Basically both will be evaluated in the same way only the format is different
+if sizeof(unsigned int) is 4 (this for 32 bit), sizeof(unsigned long long) = (8 this for 64 bit)
+2. Reading the Float Number:
+- The user is prompted to enter a float number using scanf("%f", &(data->floatValue));.
+3. Displaying Binary Representation of the Float:
+It then displays the binary representation of the entered float number by iterating through its bits and printing each bit.
+4. Reading Binary Pattern in Binary Form:
+The user is prompted to enter the binary pattern for the float. This is done in a loop, where each iteration reads a single bit using scanf("%1d", &bit);.
+The read bit is then shifted to the left in data->floatBits (which is an unsigned int), and the new bit is added using bitwise OR (|).
+The loop runs for the size of unsigned int in bits.
+5. Displaying Float Value from the Entered Binary Pattern:
+Finally, it displays the float value corresponding to the entered binary pattern.
+
+Main Function:
+- The main function creates an instance of the union FloatOrDouble named data.
+- It then calls the convertFloatOrDouble function, passing the address of data as an argument to perform the conversion.
+
+Overall Explanation:
+- The program uses a union to conveniently share the same memory space for a float, its binary representation as an unsigned integer, and vice versa.
+- The convertFloatOrDouble function takes user input for a float, displays its binary representation, prompts the user to input a binary pattern in binary form, and displays the corresponding float value.
+- The program ensures that the binary pattern is read directly as binary, bit by bit, using %1d in a loop.

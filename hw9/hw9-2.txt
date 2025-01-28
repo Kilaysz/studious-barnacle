@@ -1,0 +1,31 @@
+1. Yes, Because it has a similar value to the book(1.1754943508222875079687365372222456778186655567720
+87521508751706278417259454727172851560500000000000000000000000000000000e-38f) Because float has limited
+precision (about 7 decimal digits of precision)
+2. 0 00000000 00000000000000000000000
+3. The result will be 1.1754943508222875079687365372222456778186655567720875215087517062784172594547271
+728515625000000000000e-38 = 1.1754943508222875079687365372222456778186655567720875215087517062784172594
+547271728515625000000000000e-38 (must give a data type to f1 and f2 (float/double))
+
+Comparing 2 floating points can't always produce the result we want due to precision limit.
+In IEEE 754, Single-precision floating-point format, as defined by the IEEE 754 standard,
+allocates 32 bits to represent a floating-point number. These 32 bits are divided into three components:
+the sign bit, the exponent, and the fraction (also known as the significand or mantissa). The single precision
+has precision for about 7 decimal digits. The 23 bits allocated for the fraction effectively give you 24 bits of
+precision (including the implicit leading bit). When you convert this to decimal, it translates to approximately 7
+decimal digits of precision. Because f1 and f2 are not mathematically equal, but the values of f1 and f2 are very close
+to each other. with precision of 7 decimal digits, f1 and f2 have the same value.
+
+If the data type is double. The answer will remain the same. Because the precision of a double is 15 decimal digits.
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+1. floatToBinary Function: 
+– The input for this function is a float number (num).
+- Treating the float's memory as an unsigned int, it constructs an integer pointer, ptr, and assigns it the address of the num variable.
+The original float value is printed, and a loop is then used to go over each bit of the unsigned int representation.
+- By shifting the bits of the pointer value (*ptr) to the right (>>) and extracting the least significant bit using a bitwise AND operation (&) with 1, the loop outputs each bit.
+- The loop moves from right to left, from the most to the least important bit.
+- The binary representation of the float number is the end result.
+
+2. doubleToBinary Function:
+- Similar to floatToBinary but works with double precision floating-point numbers.
+- It uses an unsigned long long pointer to reinterpret the memory of the double as that of an unsigned long long.
+- The loop iterates over each bit of the unsigned long long representation, printing the binary representation of the double number.
+
+3. binaryToFloat Function:
+- This function takes a 32-bit binary pattern (provided as a string binary) as input.
+- It converts the binary pattern to an unsigned int by iterating over each character in the string and building the integer using bitwise left shifts (<<) and bitwise OR (|) operations.
+- It then uses a float pointer to reinterpret the memory of the unsigned int as that of a float.
+- The result is printed as the value of the original float number corresponding to the given binary pattern.
+
+4. binaryToDouble Function:
+- Similar to binaryToFloat but works with 64-bit binary patterns and double precision floating-point numbers.
+- It uses an unsigned long long variable to store the bits, and the process of conversion is the same as in binaryToFloat.
+- It then uses a double pointer to reinterpret the memory of the unsigned long long as that of a double.
+- The result is printed as the value of the original double number corresponding to the given binary pattern.
+
+5. Main function
+- Presents a menu to the user, allowing them to choose between float to binary, double to binary, binary to float, or binary to double conversions.
+- Reads the user's choice and performs the corresponding operation by calling the respective function.
+- Handles user input for float/double values or binary patterns.
+- Uses a switch statement to execute the chosen operation.
+- Provides an error message for an invalid choice.

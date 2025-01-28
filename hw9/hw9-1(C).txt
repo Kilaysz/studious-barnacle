@@ -1,0 +1,33 @@
+1. union FloatOrDouble:
+- This union is designed to represent both float and double numbers along with their individual components (sign, exponent, and mantissa) using bit-field structures.
+- It allows accessing the same memory location through different names, depending on whether the number is a float or a double.
+
+2. printBitPattern Function:
+    a. Function Signature:
+        - void printBitPattern(union FloatOrDouble num, size_t bitSize): The function takes a FloatOrDouble 
+        - union and the size of the bit representation (bitSize).
+    b. Calculate Component Size:
+        - The size variable is calculated as the number of bytes needed for the given bitSize. This is used to 
+        determine the size of each component (sign, exponent, mantissa) in bytes.
+    c. Printing Sign, Exponent, Mantissa:
+        - The function uses three loops to iterate through the bits of the sign, exponent, and mantissa components separately.
+        - For each bit, it checks the size of the number (float or double) to determine whether to print as an unsigned integer (%llu) or an unsigned integer (%u).
+        - It uses bit-wise operations to extract and print the individual bits.
+    d. Separating Sign, Exponent, Mantissa:
+        - After printing the bits of the sign, exponent, and mantissa, a space is printed to separate them visually.
+    e. Repeating for Exponent and Mantissa
+    f. Newline Character:
+    After printing the bits of the sign, exponent, and mantissa, a newline character is printed to move to the next line.
+- The size of each component is determined based on whether the number is a float or a double.
+- It uses bit-wise operations to extract individual bits from each component and prints them.
+
+3. Main Function:
+- The main function is the entry point of the program.
+- It declares a FloatOrDouble union named num.
+- The user is prompted to enter a float or double number using scanf("%lf", &num.double_num);.
+- The user is then prompted to enter the desired bit size (32 or 64) using scanf("%zu", &bitSize);.
+- It prints the bit pattern of the entered number using printBitPattern.
+- It prompts the user to enter a bit pattern for a float or double number using scanf("%llu %llu %llu", &num.double_bits.sign, &num.double_bits.exponent, &num.double_bits.mantissa);.
+- It prints the floating-point value corresponding to the entered bit pattern using printf("Value: %lf\n", num.double_num);
+
+
